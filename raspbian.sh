@@ -17,29 +17,32 @@ apt-get install build-essential checkinstall git autoconf automake -y
 
 apt install libtool m4 automake -y
 
-apt-get install libplist3 -y
-
-
 apt-get install python-dev -y
-apt-get install doxygen -y
+
 apt-get install pkg-config -y
 
 apt-get install libavahi-client-dev -y
 
+apt-get install libplist++3v5 -y
 
+apt-get install libplist-dbg -y
+
+apt-get install libplist-dev -y
+
+apt-get install libplist-doc -y
+
+apt-get install libplist-utils -y
+
+apt-get install libplist3 -y
+
+apt-get install python-plist -y
 
 apt-get install libusb-1.0-0-dev -y
 
 apt-get install libssl-dev -y
-apt-get install libxml2-dev -y
-apt-get install libplist++ -y
 
 
-ldconfig
-
-apt-get update -y
-
-git clone https://github.com/tihmstar/libplist
+git clone https://github.com/libimobiledevice/libplist
 cd libplist
 ./autogen.sh
 ./autogen.sh
@@ -48,7 +51,7 @@ make install
 cd ../
 
 
-git clone https://github.com/tihmstar/libusbmuxd
+git clone https://github.com/jkcoxson/libusbmuxd
 cd libusbmuxd
 ./autogen.sh
 ./autogen.sh
@@ -56,7 +59,7 @@ make
 make install
 cd ../
 
-git clone https://github.com/tihmstar/libimobiledevice
+git clone https://github.com/jkcoxson/libimobiledevice
 cd libimobiledevice
 ./autogen.sh
 ./autogen.sh
@@ -64,20 +67,15 @@ make
 make install
 cd ../
 
-
-
-git clone https://github.com/tihmstar/usbmuxd2
+git clone https://github.com/jkcoxson/usbmuxd2
 cd usbmuxd2
-git submodule init
-git submodule update
 ./autogen.sh
 ./autogen.sh
 make
 make install
 cd ../
 
-
-git clone https://github.com/tihmstar/libgeneral
+git clone https://github.com/tihmstar/libgeneral.git
 cd libgeneral
 ./autogen.sh
 ./autogen.sh
@@ -85,7 +83,10 @@ make
 make install
 cd ../
 
+apt-get install libplist++ -y
 
+
+ldconfig
 echo
 echo
 echo
