@@ -17,8 +17,11 @@ apt-get install build-essential checkinstall git autoconf automake -y
 
 apt install libtool m4 automake -y
 
-apt-get install python-dev -y
+apt-get install libplist3 -y
 
+
+apt-get install python-dev -y
+apt-get install doxygen -y
 apt-get install pkg-config -y
 
 apt-get install libavahi-client-dev -y
@@ -36,7 +39,7 @@ ldconfig
 
 apt-get update -y
 
-git clone https://github.com/libimobiledevice/libplist
+git clone https://github.com/tihmstar/libplist
 cd libplist
 ./autogen.sh
 ./autogen.sh
@@ -45,7 +48,7 @@ make install
 cd ../
 
 
-git clone https://github.com/jkcoxson/libusbmuxd
+git clone https://github.com/tihmstar/libusbmuxd
 cd libusbmuxd
 ./autogen.sh
 ./autogen.sh
@@ -53,7 +56,7 @@ make
 make install
 cd ../
 
-git clone https://github.com/jkcoxson/libimobiledevice
+git clone https://github.com/tihmstar/libimobiledevice
 cd libimobiledevice
 ./autogen.sh
 ./autogen.sh
@@ -61,18 +64,21 @@ make
 make install
 cd ../
 
-git clone https://github.com/hjsm23/libgeneral
-cd libgeneral
+
+
+git clone https://github.com/tihmstar/usbmuxd2
+cd usbmuxd2
+git submodule init
+git submodule update
 ./autogen.sh
 ./autogen.sh
 make
 make install
 cd ../
 
-git clone https://github.com/hjsm23/usbmuxd2
-cd usbmuxd2
-git submodule init
-git submodule update
+
+git clone https://github.com/tihmstar/libgeneral
+cd libgeneral
 ./autogen.sh
 ./autogen.sh
 make
