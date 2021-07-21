@@ -23,25 +23,11 @@ apt-get install pkg-config -y
 
 apt-get install libavahi-client-dev -y
 
-apt-get install libplist++3v5 -y
 
-apt-get install libplist-dbg -y
-
-apt-get install libplist-dev -y
-
-apt-get install libplist-doc -y
-
-apt-get install libplist-utils -y
-
-apt-get install libplist3 -y
-
-apt-get install python-plist -y
 
 apt-get install libusb-1.0-0-dev -y
 
 apt-get install libssl-dev -y
-
-pip install cython
 
 git clone https://github.com/libimobiledevice/libplist
 cd libplist
@@ -70,6 +56,8 @@ cd ../
 
 git clone https://github.com/jkcoxson/usbmuxd2
 cd usbmuxd2
+git submodule init
+git submodule update
 ./autogen.sh
 ./autogen.sh
 make
