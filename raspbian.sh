@@ -29,6 +29,10 @@ apt-get install libusb-1.0-0-dev -y
 
 apt-get install libssl-dev -y
 apt-get install libxml2-dev -y
+apt-get install libplist++ -y
+
+
+ldconfig
 
 apt-get update -y
 
@@ -75,10 +79,7 @@ make
 make install
 cd ../
 
-apt-get install libplist++ -y
 
-
-ldconfig
 echo
 echo
 echo
