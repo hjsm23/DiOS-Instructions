@@ -41,6 +41,7 @@ apt-get install libusb-1.0-0-dev -y
 
 apt-get install libssl-dev -y
 
+pip install cython
 
 git clone https://github.com/libimobiledevice/libplist
 cd libplist
