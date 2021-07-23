@@ -23,6 +23,8 @@ apt-get install pkg-config -y
 
 apt-get install libavahi-client-dev -y
 
+apt-get install python-plist -y
+
 apt-get install doxygen -y
 
 apt-get install cython -y
