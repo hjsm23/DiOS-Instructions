@@ -23,6 +23,8 @@ apt-get install pkg-config -y
 
 apt-get install libavahi-client-dev -y
 
+apt-get install doxygen -y
+
 apt-get install cython -y
 
 apt-get install libusb-1.0-0-dev -y
@@ -59,6 +61,14 @@ make
 make install
 cd ../
 
+git clone https://github.com/tihmstar/libgeneral.git
+cd libgeneral
+./autogen.sh
+./autogen.sh
+make
+make install
+cd ../
+
 git clone https://github.com/hjsm23/usbmuxd2
 cd usbmuxd2
 git submodule init
@@ -69,14 +79,11 @@ make
 make install
 cd ../
 
-git clone https://github.com/tihmstar/libgeneral.git
-cd libgeneral
-./autogen.sh
-./autogen.sh
-make
-make install
-cd ../
 
+apt-get install libplist++ -y
+
+
+ldconfig
 
 echo
 echo
