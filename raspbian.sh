@@ -23,11 +23,16 @@ apt-get install pkg-config -y
 
 apt-get install libavahi-client-dev -y
 
-
+apt-get install cython -y
 
 apt-get install libusb-1.0-0-dev -y
 
 apt-get install libssl-dev -y
+
+apt-get install libplist++ -y
+
+
+ldconfig
 
 git clone https://github.com/libimobiledevice/libplist
 cd libplist
@@ -54,7 +59,7 @@ make
 make install
 cd ../
 
-git clone https://github.com/jkcoxson/usbmuxd2
+git clone https://github.com/hjsm23/usbmuxd2
 cd usbmuxd2
 git submodule init
 git submodule update
@@ -72,10 +77,7 @@ make
 make install
 cd ../
 
-apt-get install libplist++ -y
 
-
-ldconfig
 echo
 echo
 echo
