@@ -9,17 +9,18 @@ fi
 
 echo "Root check passed, continue install."
 
-apt install git -y
 
-apt-get upgrade -y
+apt-get install checkinstall -y
 
-apt-get install build-essential checkinstall git autoconf automake -y
+apt-get install autoconf -y
 
-apt install libtool m4 automake -y
+apt install libtool -y
 
-apt-get install python-dev -y
+apt-get install libtool-bin -y
 
-apt-get install pkg-config -y
+apt-get install libusb-1.0-0-dev -y
+
+apt-get install libssl-dev -y
 
 apt-get install libavahi-client-dev -y
 
@@ -29,63 +30,51 @@ apt-get install doxygen -y
 
 apt-get install cython -y
 
-apt-get install libusb-1.0-0-dev -y
-
-apt-get install libssl-dev -y
+apt-get update -y && apt-get upgrade -y
 
 apt-get install libplist++ -y
 
 
-ldconfig
-
 git clone https://github.com/libimobiledevice/libplist
-cd libplist
-./autogen.sh
-./autogen.sh
-make
-make install
-cd ../
-
 
 git clone https://github.com/jkcoxson/libusbmuxd
-cd libusbmuxd
-./autogen.sh
-./autogen.sh
-make
-make install
-cd ../
 
 git clone https://github.com/jkcoxson/libimobiledevice
-cd libimobiledevice
-./autogen.sh
-./autogen.sh
-make
-make install
-cd ../
+
+git clone https://github.com/jkcoxson/usbmuxd2
 
 git clone https://github.com/tihmstar/libgeneral.git
+
+cd libplist
+./autogen.sh
+make && make install
+ldconfig
+cd ..
+
+cd libusbmuxd
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./autogen.sh
+make && make install
+sudo ldconfig
+cd ..
+
+cd libimobiledevice
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./autogen.sh --enable-debug
+make && make install
+cd ..
+
 cd libgeneral
-./autogen.sh
-./autogen.sh
-make
-make install
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./autogen.sh --enable-debug
+make && make install
 cd ../
 
-git clone https://github.com/hjsm23/usbmuxd2
 cd usbmuxd2
 git submodule init
 git submodule update
-./autogen.sh
-./autogen.sh
-make
-make install
-cd ../
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --runstatedir=/run
+make && make install
 
+killall usbmuxd
 
-apt-get install libplist++ -y
-
-
-ldconfig
 
 echo
 echo
@@ -94,4 +83,3 @@ echo "##############################"
 echo "#   Installation Completed.  #"
 echo "##############################\n\n\n"
 
-idevice_id
