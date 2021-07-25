@@ -41,9 +41,9 @@ git clone https://github.com/jkcoxson/libusbmuxd
 
 git clone https://github.com/jkcoxson/libimobiledevice
 
-git clone https://github.com/jkcoxson/usbmuxd2
-
 git clone https://github.com/tihmstar/libgeneral.git
+
+git clone https://github.com/hjsm23/usbmuxd2.git
 
 cd libplist
 ./autogen.sh
@@ -83,3 +83,4 @@ echo "##############################"
 echo "#   Installation Completed.  #"
 echo "##############################\n\n\n"
 
+usbmuxd -s -d --user root start
