@@ -30,7 +30,7 @@ apt-get install doxygen -y
 
 apt-get install cython -y
 
-apt-get update -y && apt-get upgrade -y
+apt-get update -y
 
 apt-get install libplist++ -y
 
