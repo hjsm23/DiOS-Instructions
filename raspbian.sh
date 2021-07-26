@@ -84,3 +84,5 @@ echo "#   Installation Completed.  #"
 echo "##############################\n\n\n"
 
 usbmuxd -s -d --user root start
+
+idevice_id
